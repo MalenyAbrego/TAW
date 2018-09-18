@@ -1,0 +1,54 @@
+
+#contenedor {
+    width: 900px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: lightgray;
+    padding: 10px 10px 10px 10px;
+}
+
+.btnGame {
+    width: 80px;
+    height: 80px;
+}
+
+body{
+	font-family: Century Gothic;
+	background-color :purple ;
+}
+th,td{
+	margin-left: 5px;
+	border: 3px solid white;
+
+
+}
+#title{
+	font-family: Love Story Rough;
+	font-size: 48;
+	text-align: center;
+}
+
+
+#contenedor{
+
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: lightpink;
+	text-indent: 18px;
+	border: 3px solid white;
+
+
+}
+
+table{
+	
+
+	align-self: center;
+	align-content: center;
+	text-align: center;
+	border: 1px solid white;
+	border-collapse: collapse;
+margin-left: 20px;
+	
+}
