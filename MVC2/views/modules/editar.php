@@ -14,5 +14,5 @@
 <?php
 	//Se invoca la funcion editarUsuarioController de la clase MvcController:
 	$editar->editarUsuarioController();
-	
+	$editar->actualizarUsuarioController();
 ?>
