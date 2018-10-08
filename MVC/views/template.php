@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<title>Plantilla</title>
 	<style>
+		*{
+			font-family: arial;
+		}
 		header {
 			position: relative;
 			margin: auto;
@@ -42,18 +45,23 @@
 			position: relative;
 			padding: 20%;
 		}
+
 	</style>
 	
 </head>
 <body>
 	<header>
 		<h1>TAW - PHP MVC</h1>
+		<?php 
+		//Muestra la navegacion
+		include "modules/navegacion.php"
+
+		?>
 	</header>
 <section>
 	<?php 
 		//Mostraremos un controlador que muestra la plantilla
 		$mvc = new MvcController();
-
 		//Mostramos la función 
 		$mvc -> enlacesPaginasController();
 
