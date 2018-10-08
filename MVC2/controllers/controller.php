@@ -72,6 +72,7 @@
 			$datosController = $_GET["id"];
 			$respuesta = Datos::editarUsuarioModel($datosController, "usuarios");
 			echo'<form method="POST">
+				<input type="hidden" value="'.$respuesta["id"].'" name="idE">
 				<input type="text" value="'.$respuesta["usuario"].'"name="usuarioE" placeholder="Nombre" required><br>
 				<input type="text" value="'.$respuesta["password"].'" name="passwordE" placeholder="Contraseña" required><br>
 				<input type="email" value="'.$respuesta["email"].'" name="emailE" placeholder="E-mail" required><br>
@@ -82,10 +83,11 @@
 
 		public function actualizarUsuarioController(){
 			if(isset($_POST["usuarioE"])){
-				$datosController = array("usuario"=>$_POST["usuarioE"], "password"=>$_POST["passwordE"],"email"=>$_POST["emailE"]);
+				$datosController = array("id"=>$_POST["idE"],"usuario"=>$_POST["usuarioE"], "password"=>$_POST["passwordE"],"email"=>$_POST["emailE"]);
 				
+				echo "<script>alert('Usuario/Contraseña invalidos');</script>";
 				$respuesta = Datos::actualizarUsuarioModel($datosController, "usuarios");
-				if($respuesta == "success"){
+				if($respuesta =="success"){
 					header("location:index.php?action=usuarios");
 				}
 				else{
@@ -111,7 +113,7 @@
 			$respuesta = Datos::mostrarUsuariosModel("usuarios");
 		    foreach($respuesta as $row => $item){
 		            echo'<tr>
-		                <td>'.$item["id"].'</td>
+		                <td>'.$item["id"].'</td> 
 		                <td>'.$item["usuario"].'</td>
 		                <td>'.$item["password"].'</td>
 		                <td>'.$item["email"].'</td>
