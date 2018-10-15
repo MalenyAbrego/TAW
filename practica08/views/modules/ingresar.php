@@ -7,17 +7,20 @@
 </form>
 
 <?php
+	
 	//Enviar los datos al controlador MvcController (es la clase principal de controller.php)
 	$ingresar= new MvcController();
+	
 	//Se invoca la funcion ingresarUsuarioController de la clase MvcController:
 	$ingresar->ingresarUsuarioController();
 
-	if(isset($_GET["action"])){
-	if($_GET["action"] == "fallo"){
-		echo "<script>alert('Usuario/Contraseña invalidos');</script>";
-	
+		if(isset($_GET['action'])){
+			if($_GET['action']=='fallo'){
+				//se indica mediante una alerta que el usuario o la contraseña es invalida
+				echo "<script>alert('Usuario o contraseña incorrecta.')</script>";
+
+		}
 	}
-}
 
 
 

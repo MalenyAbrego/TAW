@@ -1,9 +1,9 @@
 <?php
-	session_start();
-	if(!$_SESSION["validar"]){
+	/*session_start();
+	if(!$_SESSION["usuario"]){
 		header("location:index.php?action=ingresar");
 		exit();
-	}
+	}*/
 
 	//Enviar los datos al controlador MvcController (es la clase principal de controller.php)
 	$editar= new MvcController();

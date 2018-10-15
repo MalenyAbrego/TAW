@@ -80,13 +80,29 @@
 			$datosController = $_GET["id"];
 			/**Llama al modelo de borrarUsuariosModel, se manda el id y el nombre
 			de la tabla del cual se va a eliminar el registro**/
+			echo"<script>
+function PromptDemo() {
+//Ingresamos un mensaje a mostrar
+var mascota = prompt('¿Cuál es tu mascota favorita?', '');
+//Detectamos si el usuario ingreso un valor
+if (mascota != null){
+alert('Tu mascota favorita es '' + mascota);
+}
+//Detectamos si el usuario NO ingreso un valor
+else {
+alert('No has ingresado una mascota');
+}
+}";
+			
 			$respuesta = Datos::borrarUsuariosModel("usuarios",$datosController);
+
 			if($respuesta=="success"){
 				header("location:index.php?action=usuarios");
 			}
 		}
 
 		}
+
 
 		public function mostrarUsuariosController(){
 			$respuesta = Datos::mostrarUsuariosModel("usuarios");
@@ -101,6 +117,30 @@
 		                </tr>';
 		    }
 		}
+
+		public function ingresarUsuarioController(){
+			//se verifica que se haya ingresado usuario y contraseña
+			if(isset($_POST["usuarioIngreso"]) && isset($_POST["passwordIngreso"])){
+				//se almacena en un arreglo los datos
+				$datosController = array("usuario"=>$_POST["usuarioIngreso"],
+										"password"=>$_POST["passwordIngreso"]);
+				$respuesta = Datos::ingresoUsuarioModel($datosController);
+				//se verifica el motodo de ingresoUsuarioModel 
+				//parametro: arreglo que posee el usuario y contraseña
+				if($respuesta==1){
+					//se manda el usuario ingresado si el metodo devuelve 1, qiere decir que si ingreso,
+					//se guardae en la variable usuario de session
+					session_start();
+					$_SESSION['usuario']= $_POST['usuarioIngreso'];
+					//se dirige a la pantalla de usuarios
+					header("location:index.php?action=usuarios");
+				}else{
+					//se indica que fallo al ingresar
+					header("location:index.php?action=fallo");
+				}
+			}
+		}
+
 
 		
 

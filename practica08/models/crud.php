@@ -9,7 +9,6 @@ class Datos extends Conexion{
 
 	#REGISTRO DE USUARIOS
 	public function registroUsuarioModel($datosModel,$tabla){
-
 		$stmt=Conexion::conectar()->prepare("INSERT INTO $tabla (usuario,password,email) VALUES (:usuario,:password,:email)");
 
 		#bindParam() Vincula una variable de PHP a un parámetro de susticion de nombre de signo de interrogacion correspondiente de la sentencia SQL que fue usada para preparar la sentencia
@@ -77,6 +76,28 @@ class Datos extends Conexion{
 		}
 		$stmt->close();
 	}
+
+	public function ingresoUsuarioModel($datos){
+			//se prepara la consulta
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM usuarios WHERE usuario=:usuario AND password=:password");
+			//se manda el usuario como parametro, contenido en el arreglo
+			$stmt->bindParam(":usuario",$datos['usuario'],PDO::PARAM_STR);
+			//se manda el password como parametro, contenido en el arreglo
+			$stmt->bindParam(":password",$datos['password'],PDO::PARAM_STR);
+			//se ejecuta la consulta
+			$stmt->execute();
+			//se asocian los valores devuelos
+			$r = $stmt->fetchAll();
+			if($r){
+				//si se encontro algo, retorna 1 lo que significa que si ingreso un usuario con su contraseña
+				return 1;
+			}else{
+				//return 2 en caso contrario
+				return 0;
+			}
+			$stmt->close();
+		}
+
 
 
 

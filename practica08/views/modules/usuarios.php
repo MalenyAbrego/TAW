@@ -1,9 +1,10 @@
 <?php
-	session_start();
-	if(!$_SESSION["validar"]){
-		header("location:index.php?action=ingresar");
-		exit();
-	}
+  //si no existe un usuario logueado se procede a ir al formulario de ingresar
+  session_start();
+  if(!isset($_SESSION['usuario'])){
+    header("location: index.php?action=ingresar");
+    exit();
+  }
 ?>
 
 <h1>USUARIOS REGISTRADOS</h1>
@@ -14,8 +15,8 @@
               <tr>
                   <th>#</th>
                   <th>Usuario</th>
-                  <th>Correo</th>
                   <th>Contraseña</th>
+                  <th>Correo</th>
                   <th></th>
                   <th></th>
               </tr>
@@ -23,9 +24,11 @@
               <tbody>
                 <?php
                   $mostrar= new MvcController();
+                  $borrar= new MvcController();
 	//Se invoca la funcion mostrarUsuariosController de la clase MvcController:
 	$mostrar->mostrarUsuariosController();
-  $mostrar->borrarUsuariosController();
+  
+  $borrar->borrarUsuariosController();
                  
                 ?>
               </tbody>
