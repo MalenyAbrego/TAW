@@ -8,24 +8,35 @@
 	if($status=="before_submission" or $status=="failure")
 	{
 ?>
+<div class="titulo">
 	<h3>Please fill up the following form to login to your account</h3>
-	
-	<form method="post">
-		<fieldset>
-			<legend>Login Form</legend>
-			<label for="username">Username</label>
-			<input type="text" name="username" id="username" value="<?php echo $_REQUEST["username"]; ?>">
-			<font color="red"><?php echo $errors["username"]; ?></font>
-			<br>
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password">
-			<font color="red"><?php echo $errors["password"]; ?></font>
-			<br>
-			<input type="hidden" name="page" value="login">
-			<input type="hidden" name="caller" value="self">
-			<input type="submit" value="Sign In">
-		</fieldset>
-	</form>
+</div>
+<div class="centerForm">
+	<div class="row">
+		<form class="col s12" method="post">
+			<div class="titulo2">Login Form</div><br>
+			<div class="row">
+				<div class="input-fiel col s4">
+					<label for="username">Username</label><br>
+					<input type="text" name="username" id="username" value="<?php echo $_REQUEST["username"]; ?>">
+					
+					<font color="red"><?php echo $errors["username"]; ?></font>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="input-fiel col s4">
+					<label for="password">Password</label><br>
+					<input type="password" name="password" id="password">
+					<font color="red"><?php echo $errors["password"]; ?></font>
+				</div>
+			</div>
+				<input type="hidden" name="page" value="login">
+				<input type="hidden" name="caller" value="self">
+				<button class="waves-effect waves-light btn-small pink accent-2" type="submit" name="action">Sing In<i class="material-icons left">directions_walk</i></button>
+		</form>
+	</div>
+</div>
 <?php
 	}
 	else

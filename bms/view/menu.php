@@ -4,8 +4,8 @@
 ?>
 <nav>
 	<div class="nav-wrapper grey darken-4">
-		<div class="logo">
-		<a href="#" class="brand-logo"> B M S</a></div>
+		<div class="logo2">
+		<a href="#" class="brand-logo"> Bms</a></div>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a href="index.php?page=index">Home</a></li>
 			<li><a href="index.php?page=register">Register</a></li>
@@ -21,7 +21,8 @@
 ?>
 <nav>
 	<div class="nav-wrapper grey darken-4">
-		<a href="#" class="brand-logo"> B M S</a>
+		<div class="logo2">
+		<a href="#" class="brand-logo"> Bms</a></div>
 	<ul id="nav-mobile" class="right hide-on-med-and-down">
 		<li><a href="index.php?page=home">Home</a></li>
 		<li><a href="index.php?page=profile">Profile</a></li>

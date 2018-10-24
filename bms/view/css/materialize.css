@@ -3071,7 +3071,7 @@ td, th {
   table.responsive-table td {
     display: block;
     min-height: 1.25em;
-    text-align: left;
+    text-align: center;
   }
   table.responsive-table tr {
     border-bottom: none;

@@ -6,7 +6,9 @@
 		include_once "menu.php";
 ?>
 
-<h3 class="firstTitle">Welcome to Home Page</h3>
+<div class="titulo">
+	<h3>Welcome to Home Page</h3>
+</div>
 
 <?php
 	}
