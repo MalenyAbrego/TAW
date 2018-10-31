@@ -6,6 +6,7 @@
 	<label for="carrera">Carrera</label><br>
 	<select name="carreraRegistro" required>
 		 <?php
+		 echo "<script>alert('Usuario/Contraseña invalidos');</script>";
             $carrer = new MvcController();
             $carrer -> selCarrera();
           ?>
