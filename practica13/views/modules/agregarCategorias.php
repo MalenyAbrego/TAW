@@ -6,7 +6,7 @@
         <div class="col-md-6">
 <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Agregar Jugador</h3>
+              <h3 class="box-title">Agregar Categoria</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -14,12 +14,7 @@
               <div class="box-body">
                  <div class="form-group">
                   <label class="col-sm-2 control-label">Nombre</label><div class="col-sm-10">
-                    <input type="text" class="form-control" name="nombre" placeholder="Nombre completo">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Email</label><div class="col-sm-10">
-                    <input type="email" class="form-control" name="email" placeholder="Email">
+                    <input type="text" class="form-control" name="nombre" placeholder="Nombre de la categoria">
                   </div>
                 </div>
               </div>
@@ -34,7 +29,6 @@
       </div>
     </section>
   </div>
-
 <?php
 	//Enviar los datos al controlador MvcController (es la clase principal de controller.php)
 	$agregar=new MvcController();
@@ -42,7 +36,7 @@
 	//Se invoca la funcion registroUsuarioController de la clase MvcController:
 if ($_POST){
   //echo "<script>alert('1');</script>";
-  $agregar->agregarJugadorController();
+  $agregar->agregarCategoriaController();
 }
 	
 

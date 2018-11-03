@@ -34,9 +34,9 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <form action="" method="post">
+    <form action="" method="POST">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Username" name="username">
+        <input type="text" class="form-control" placeholder="Username" name="usuario">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -74,8 +74,18 @@
 </html>
 <?php 
 
-		$ingreso = new MvcController();
-		//ejecutar el controlador para el login
-		$ingreso->ingresoUsuarioController();
+	//Enviar los datos al controlador MvcController (es la clase principal de controller.php)
+	$ingresar= new MvcController();
+	
+	//Se invoca la funcion ingresarUsuarioController de la clase MvcController:
+	$ingresar->ingresarUsuarioController();
+		if(isset($_GET['action'])){
+      
+      
+			if($_GET['action']=='fallo'){
+				//se indica mediante una alerta que el usuario o la contraseña es invalida
+				echo "<script>alert('Usuario o contraseña incorrecta.')</script>";
+		}
+	}
 		
 ?>

@@ -1,7 +1,11 @@
 <?php
+
+  //si no existe un usuario logueado se procede a ir al formulario de ingresar
+
   
 $jugadores= new MvcController();
 $equipos= new MvcController();
+$categorias= new MvcController();
 
 ?>
 
@@ -31,7 +35,7 @@ $equipos= new MvcController();
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>3<sup style="font-size: 20px"></h3>
+              <h3><?php echo $categorias->noCategoriasController(); ?><sup style="font-size: 20px"></h3>
 
               <p>Categorías</p>
             </div>

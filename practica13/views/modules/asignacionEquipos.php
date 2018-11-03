@@ -1,12 +1,13 @@
 <?php
 	//Enviar los datos al controlador MvcController (es la clase principal de controller.php)
 	$agregar=new MvcController();
-  $select=new MvcController();
+  $selectJugadores=new MvcController();
+  $selectEquipos=new MvcController();
 
 	//Se invoca la funcion registroUsuarioController de la clase MvcController:
 if ($_POST){
   echo "<script>alert('1');</script>";
-  $agregar->agregarEquipoController();
+  $agregar->agregarAsignacionController();
 }
 	
 
@@ -18,7 +19,7 @@ if ($_POST){
 	}
 
 
-?>
+?>   
 <div class="content-wrapper">
   <!-- Main content -->
     <section class="content" >
@@ -27,21 +28,23 @@ if ($_POST){
         <div class="col-md-6">
 <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Agregar Equipo</h3>
+              <h3 class="box-title">Asignación de equipos y jugadores</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
             <form class="form-horizontal" method="POST">
               <div class="box-body">
                  <div class="form-group">
-                  <label class="col-sm-2 control-label">Nombre</label><div class="col-sm-10">
-                    <input type="text" class="form-control" name="equipo" placeholder="Nombre del equipo">
-                  </div>
+                  <label class="col-sm-2 control-label">Jugador:</label><div class="col-sm-10">
+                  <select class="form-control" name="jugador">
+                    <?php $selectJugadores->selectJugadoresController(); ?>
+                    
+                  </select></div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Categoría</label><div class="col-sm-10">
-                  <select class="form-control" name="categoria">
-                    <?php $select->selectCategoriasController(); ?>
+                  <label class="col-sm-2 control-label">Equipo:</label><div class="col-sm-10">
+                  <select class="form-control" name="equipo">
+                    <?php $selectEquipos->selectEquiposController(); ?>
                     
                   </select></div>
                 </div>
@@ -57,4 +60,3 @@ if ($_POST){
       </div>
     </section>
   </div>
-

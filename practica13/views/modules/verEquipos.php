@@ -29,7 +29,7 @@
                 <tr>
                   <th>#</th>
                   <th>Nombre</th>
-                  <th>E-Mail</th>
+                  <th>Categoria</th>
                   <th></th>
                 </tr>
                 </thead>
@@ -37,7 +37,9 @@
                   <?php
                   
                   $mostrar= new MvcController();
+                  $borrar= new MvcController();
                   $mostrar->mostrarEquiposController();
+                  $borrar->borrarEquiposController();
                   
                   
                   ?>

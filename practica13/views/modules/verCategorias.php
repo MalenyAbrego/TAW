@@ -20,7 +20,7 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Table With Full Features</h3>
+              <h3 class="box-title">CATEGORIAS</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -29,7 +29,6 @@
                 <tr>
                   <th>#</th>
                   <th>Nombre</th>
-                  <th>E-Mail</th>
                   <th></th>
                 </tr>
                 </thead>
@@ -38,8 +37,8 @@
                   
                   $mostrar= new MvcController();
                   $borrar= new MvcController();
-                  $mostrar->mostrarJugadoresController();
-                  $borrar->borrarJugadoresController();
+                  $mostrar->mostrarCategoriasController();
+                  $borrar->borrarCategoriasController();
                   
                   
                   ?>

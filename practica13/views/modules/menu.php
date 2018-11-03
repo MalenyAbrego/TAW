@@ -27,6 +27,18 @@
         </li>
         <li class="treeview">
           <a href="#">
+            <i class="fa fa-user"></i> <span>Categorias</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="index.php?action=agregarCategorias"><i class="fa fa-plus"></i>Agregar Categoria</a></li>
+            <li><a href="index.php?action=verCategorias"><i class="fa fa-list"></i>Ver Categorias</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
             <i class="fa fa-futbol-o"></i> <span>Equipos</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -35,6 +47,18 @@
           <ul class="treeview-menu">
             <li><a href="index.php?action=agregarEquipos"><i class="fa fa-plus"></i>Agregar Equipos</a></li>
             <li><a href="index.php?action=verEquipos"><i class="fa fa-list"></i>Ver equipos</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user"></i> <span>Asignaciones</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="index.php?action=asignacionEquipos"><i class="fa fa-plus"></i>Asignar Equipos</a></li>
+            <li><a href="index.php?action=verAsignaciones"><i class="fa fa-list"></i>Ver asignaciones</a></li>
           </ul>
         </li>
       </ul>
